@@ -257,7 +257,6 @@
 	<!-- End of the second panel -->
 
 	<div class="alert alert-success" role="alert">Yay!</div>
-<<<<<<< Updated upstream
 
 
 		<!--==================================-->
@@ -299,8 +298,6 @@
 	?>
 
 	</div>
-=======
->>>>>>> Stashed changes
 
 
 
