@@ -57,14 +57,13 @@
 
 
 		      <form class="navbar-form navbar-right" action="logout.php" method="post">
-		      	<button class="btn btn-warning">Sign out</button>
+
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
 		        	<?php
 		        	require("common.php");
 		            $arr = array_values($_SESSION['user']);
-					echo "<a href='#'>Welcome, " . $arr[1] . "</a>";
 					?>
 				</li>
 		      </ul>
