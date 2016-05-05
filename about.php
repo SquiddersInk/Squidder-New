@@ -104,7 +104,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="p1">
-													"Rao"ster, our main github manager, always brings his enthusiastic attitude to our group. Apart from working on the github, he is also in charge of our login and register pages to ensure that our users experience a fluid sign-up process.
+													Surin "Rao"ster Rao, our main github manager, always brings his enthusiastic attitude to our group. Apart from working on the github, he is also in charge of our login and register pages to ensure that our users experience a fluid sign-up process.
                         </div>
                     </div>
                 </div>
@@ -113,11 +113,11 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-power-off fa-fw"></i> Zhuoen Dai
+                            <i class="fa apsojdfjsdfa-power-off fa-fw"></i> Zhuoen Dai
                         </div>
                         <!-- /.panel-heading -->
                         <div class="p1">
-													Zhuoen
+													Zhuoen "Squidster" Dai, our supreme overlord coder and also a github manager. He is the lead design behind our main user page after they log in.
                         </div>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="p1">
-													aaa
+													Geoffrey "Jianger" Jiang, has the roles of assistant coder, github manager, and morale-booster supremeo. He created the about page and the help page and he helps around with the other coding responsities.
                         </div>
                     </div>
                 </div>
