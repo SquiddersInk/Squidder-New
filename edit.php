@@ -87,39 +87,9 @@
 	<div class="col-md-9" padding='150px'>
 		<br><br><br><br>
 
-	    <!--===================================================-->
-		<!-- This is the HTML form that appears in the browser -->
-		<!--===================================================-->
-		<div class="panel panel-success">
-			<div class="panel-heading">
-				<h3 class="panel-title">Entry Submission</h3>
-			</div>
-		<div class="panel-body">
-
-	   	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-	   	<div class="grid">
-		    <div class="row">
-	  			<div class="col-lg-12">
-		    	<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1">Country</span>
-				  <input type="text" name="country" class="form-control" placeholder="Ex: Rainbowland" aria-describedby="basic-addon1">
-				  <span class="input-group-addon" id="basic-addon1">National Animal</span>
-				  <input type="text" name="animal" class="form-control" placeholder="Ex: Unicorn" aria-describedby="basic-addon1">
-				  	<div class="input-group-btn">
-				  		<input type="submit" name="submit" class="btn btn-success center-block">
-				  	</div>
-				</div>
-				</div>
-			</div>
-		</div>
-	    </form>
-
-		</div>
-		</div>
-		<!-- End of the HTML form that appears in the browser -->
 
 		<!--==========================-->
-		<!-- This is the second panel -->
+		<!-- This is the first panel -->
 		<!--==========================-->
 		<div class="panel panel-success">
 			<div class="panel-heading">
@@ -132,9 +102,9 @@
 		    <div class="row">
 	  			<div class="col-lg-12">
 		    	<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1">Country</span>
+				  <span class="input-group-addon" id="basic-addon1">Title</span>
 				  <input type="text" name="country" class="form-control" placeholder="Ex: Rainbowland" aria-describedby="basic-addon1">
-				  <span class="input-group-addon" id="basic-addon1">National Animal</span>
+				  <span class="input-group-addon" id="basic-addon1">What's Up?</span>
 				  <input type="text" name="animal" class="form-control" placeholder="Ex: Unicorn" aria-describedby="basic-addon1">
 				  <div class="input-group-btn">
 				  <input type="submit" name="submit" class="btn btn-success center-block">
@@ -165,27 +135,28 @@
 
 		// To access $_SESSION['user'] values put in an array, show user his username
 		// $arr = array_values($_SESSION['user']);
-		// echo "Welcome, " . $arr[1];
 		// open connection
 		$connection = mysql_connect($host, $username, $password) or die ("Unable to connect!");
 		// select database
 		mysql_select_db($dbname) or die ("Unable to select database!");
 		// create query
 		$query = "SELECT * FROM symbols";
-
+		$query2 = "SELECT * FROM users";
 		// execute query
 		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
+		$result2 = mysql_query($query2) or die ("Error in query: $query2. ".mysql_error());
 		// see if any rows were returned
 		if (mysql_num_rows($result) > 0) {
     		// print them one after another
     		echo "<table class='table table-hover'>";
     		echo "<th>Index</th><th>Country</th><th>Animal</th><th></th>";
     		while($row = mysql_fetch_row($result)) {
-        		echo "<tr>";
-				echo "<td>".$row[0]."</td>";
-        		echo "<td>" . $row[1]."</td>";
+						$row2 = mysql_fetch_row($result2);
+						echo "<tr>";
+						echo "<td>".$row2[1]."</td>";
+        		echo "<td>" .$row[1]."</td>";
         		echo "<td>".$row[2]."</td>";
-				echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a></td>";
+						echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row2[1]." class='btn btn-danger'>Delete</a></td>";
         		echo "</tr>";
     		}
 		    echo "</table>";
@@ -230,7 +201,7 @@
 	?>
 
 	</div>
-	<!-- End of the second panel -->
+	<!-- End of the first panel -->
 
 	<div class="alert alert-success" role="alert">Yay!</div>
 
@@ -257,8 +228,8 @@
     		echo "<th>Index</th><th>Country</th>";
     		while($row = mysql_fetch_row($result)) {
         		echo "<tr>";
-				echo "<td>".$row[0]."</td>";
-				echo "<td>" . $row[1]."</td>";
+						echo "<td>".$row[0]."</td>";
+						echo "<td>" . $row[1]."</td>";
         		echo "</tr>";
     		}
 		    echo "</table>";
@@ -267,7 +238,7 @@
     		// print status message
     		echo "<table class='table table-hover'>";
     		echo "<tr>";
-			echo "<td>"."No results match your search!"."</td>";
+				echo "<td>"."No results match your search!"."</td>";
     		echo "</tr>";
     		echo "</table>";
 		}
