@@ -45,10 +45,8 @@
 		      <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
 		        <div class="input-group">
 					<div class="input-group">
-					  <span class="input-group-addon" id="basic-addon1">Search</span>
-					  <input type="text" name="search" class="form-control" placeholder="Ex: Ink" aria-describedby="basic-addon1">
 					  <div class="input-group-btn">
-					  <input type="submit" name="submit" class="btn btn-success">
+
 					  </div>
 					</div>
 		    	</div>
