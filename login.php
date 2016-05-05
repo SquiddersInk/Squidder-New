@@ -25,9 +25,9 @@
     // This if statement checks to determine whether the login form has been submitted
     // If it has, then the login code is run, otherwise the form is displayed
     if(!empty($_POST))
-    { 
-        // This query retreives the user's information from the database using
-        // their username.
+    {
+      // This query retreives the user's information from the database using
+      // their username.
         $query = "
             SELECT
                 id,
