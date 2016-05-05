@@ -118,6 +118,46 @@
 		</div>
 		<!-- End of the HTML form that appears in the browser -->
 
+	<!--==================================-->
+	<!-- This is the search results panel -->
+	<!--==================================-->
+	<div class="panel panel-success">
+			<div class="panel-heading">
+				<h3 class="panel-title">Search Results</h3>
+			</div>
+
+		<!-- This is the Search function -->
+	<?php
+		require("common.php");
+		$connection = mysql_connect($host, $username, $password) or die ("Unable to connect!");
+		mysql_select_db($dbname) or die ("Unable to select database!");
+		$search = mysql_escape_string($_POST['search']);
+		$query = "SELECT id,country FROM symbols WHERE animal LIKE '%$search%'";
+		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
+		if (mysql_num_rows($result) > 0) {
+    		// print them one after another
+    		echo "<table class='table table-hover'>";
+    		echo "<th>Index</th><th>Country</th>";
+    		while($row = mysql_fetch_row($result)) {
+        		echo "<tr>";
+				echo "<td>".$row[0]."</td>";
+				echo "<td>" . $row[1]."</td>";
+        		echo "</tr>";
+    		}
+		    echo "</table>";
+		} else {
+			
+    		// print status message
+    		echo "<table class='table table-hover'>";
+    		echo "<tr>";
+			echo "<td>"."No results match your search!"."</td>";
+    		echo "</tr>";
+    		echo "</table>";
+		}
+	?>
+
+	</div>
+
 		<!--==========================-->
 		<!-- This is the second panel -->
 		<!--==========================-->
@@ -127,23 +167,7 @@
 			</div>
 		<div class="panel-body">
 
-		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-	   	<div class="grid">
-		    <div class="row">
-	  			<div class="col-lg-12">
-		    	<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1">Country</span>
-				  <input type="text" name="country" class="form-control" placeholder="Ex: Rainbowland" aria-describedby="basic-addon1">
-				  <span class="input-group-addon" id="basic-addon1">National Animal</span>
-				  <input type="text" name="animal" class="form-control" placeholder="Ex: Unicorn" aria-describedby="basic-addon1">
-				  <div class="input-group-btn">
-				  <input type="submit" name="submit" class="btn btn-success center-block">
-				  </div>
-				</div>
-				</div>
-			</div>
-		</div>
-	    </form>
+
 		</div>
 
 	<?php
@@ -233,6 +257,7 @@
 	<!-- End of the second panel -->
 
 	<div class="alert alert-success" role="alert">Yay!</div>
+<<<<<<< Updated upstream
 
 
 		<!--==================================-->
@@ -274,6 +299,8 @@
 	?>
 
 	</div>
+=======
+>>>>>>> Stashed changes
 
 
 
