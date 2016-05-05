@@ -29,7 +29,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span> Symbols</a>
+		      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span>Squidder</a>
 		    </div>
 
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,10 +71,10 @@
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
 		        	<?php
-		        	require("common.php"); 
+		        	require("common.php");
 		            $arr = array_values($_SESSION['user']);
 					echo "<a href='#'>Welcome, " . $arr[1] . "</a>";
-					?>	
+					?>
 				</li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
@@ -86,7 +86,7 @@
 
 	<div class="col-md-9" padding='150px'>
 		<br><br><br><br>
-	    
+
 	    <!--===================================================-->
 		<!-- This is the HTML form that appears in the browser -->
 		<!--===================================================-->
@@ -123,7 +123,7 @@
 		<!--==========================-->
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<h3 class="panel-title">Database Entries & Submission</h3>
+				<h3 class="panel-title">Database Entries And Submission</h3>
 			</div>
 		<div class="panel-body">
 
@@ -145,24 +145,24 @@
 		</div>
 	    </form>
 		</div>
-    
+
 	<?php
-	
+
 	    // pass in some info;
-		require("common.php"); 
-		
-		if(empty($_SESSION['user'])) { 
-  
-			// If they are not, we redirect them to the login page. 
+		require("common.php");
+
+		if(empty($_SESSION['user'])) {
+
+			// If they are not, we redirect them to the login page.
 			$location = "http://" . $_SERVER['HTTP_HOST'] . "/login.php";
 			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
 			//exit;
-         
-        	// Remember that this die statement is absolutely critical.  Without it, 
-        	// people can view your members-only content without logging in. 
-        	die("Redirecting to login.php"); 
-    	} 
-		
+
+        	// Remember that this die statement is absolutely critical.  Without it,
+        	// people can view your members-only content without logging in.
+        	die("Redirecting to login.php");
+    	}
+
 		// To access $_SESSION['user'] values put in an array, show user his username
 		// $arr = array_values($_SESSION['user']);
 		// echo "Welcome, " . $arr[1];
@@ -172,7 +172,7 @@
 		mysql_select_db($dbname) or die ("Unable to select database!");
 		// create query
 		$query = "SELECT * FROM symbols";
-       
+
 		// execute query
 		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
 		// see if any rows were returned
@@ -190,7 +190,7 @@
     		}
 		    echo "</table>";
 		} else {
-			
+
     		// print status message
     		echo "No rows found!";
 		}
@@ -199,7 +199,7 @@
 		// set variable values to HTML form inputs
 		$country = mysql_escape_string($_POST['country']);
     	$animal = mysql_escape_string($_POST['animal']);
-		
+
 		// check to see if user has entered anything
 		if ($animal != "") {
 	 		// build SQL query
@@ -209,7 +209,7 @@
 			// refresh the page to show new update
 	 		echo "<meta http-equiv='refresh' content='0'>";
 		}
-		
+
 		// if DELETE pressed, set an id, if id is set then delete it from DB
 		if (isset($_GET['id'])) {
 			// create query to delete record
@@ -217,14 +217,14 @@
     		$query = "DELETE FROM symbols WHERE id = ".$_GET['id'];
 			// run the query
      		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
-			
+
 			// reset the url to remove id $_GET variable
 			$location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
 			exit;
-			
+
 		}
-		
+
 		// close connection
 		mysql_close($connection);
 	?>
@@ -233,7 +233,7 @@
 	<!-- End of the second panel -->
 
 	<div class="alert alert-success" role="alert">Yay!</div>
-	
+
 
 		<!--==================================-->
 		<!-- This is the search results panel -->
@@ -263,7 +263,7 @@
     		}
 		    echo "</table>";
 		} else {
-			
+
     		// print status message
     		echo "<table class='table table-hover'>";
     		echo "<tr>";
