@@ -1,68 +1,17 @@
 <html>
-<header>
-</header>
+<style>
+    body {
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                background-image: url(background.jpg);
+
+    }
+</style>
 <body>
-    <style>
-        body {
-            background-size: cover;
-            background-repeat: no-repeat;
+<!-- Custom font from Google -->
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
 
-            background-image: url(background.jpg);
-
-        }
-    </style>
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-             <nav class="navbar navbar-inverse">
-
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-
-
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
-                <li><a href="register.php">Register</a></li>
-                 <li><a href="team.php">Meet The Team</a></li>
-                  </ul>
-                </li>
-              <form class="navbar-form navbar-left" role="search">
-                <div class="input-group">
-                    <div class="input-group">
-
-                      <div class="input-group-btn">
-
-                      </div>
-                    </div>
-                </div>
-              </form>
-              <form class="navbar-form navbar-right" action="logout.php" method="post">
-
-              </form>
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <?php
-                    require("common.php");
-                    $arr = array_values($_SESSION['user']);
-
-                    ?>
-                </li>
-              </ul>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-
-</body>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -71,9 +20,43 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span>Squidder</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
+                <li><a href="register.php">Register</a></li>
+              </ul>
+
+
+              <form class="navbar-form navbar-right" action="register.php" method="post">
+                <button class="btn btn-warning">Register</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+
+</html>
 <?php
 
-//test comment
     // First we execute our common code to connection to the database and start the session
     require("common.php");
 
@@ -85,7 +68,7 @@
     // This if statement checks to determine whether the login form has been submitted
     // If it has, then the login code is run, otherwise the form is displayed
     if(!empty($_POST))
-    {
+    { 
         // This query retreives the user's information from the database using
         // their username.
         $query = "
@@ -181,15 +164,40 @@
     }
 
 ?>
-<h1>Login</h1>
-<form action="login.php" method="post">
-    Username:<br />
-    <input type="text" name="username" value="<?php echo $submitted_username; ?>" />
-    <br /><br />
-    Password:<br />
-    <input type="password" name="password" value="" />
-    <br /><br />
-    <input type="submit" value="Login" />
+<!--===================================================-->
+<!-- This is the login form that appears in the browser -->
+<!--===================================================-->
+<div class="col-md-9" padding='150px'>
+<br><br><br><br>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Login</h3>
+    </div>
+<div class="panel-body">
+
+<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+<div class="grid">
+    <div class="row">
+        <div class="col-lg-12">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">Username</span>
+          <input type="text" name="username" value="<?php echo $submitted_username; ?>" class="form-control" placeholder="Ex: Squidder" aria-describedby="basic-addon1">
+          <span class="input-group-addon" id="basic-addon1">Password</span>
+          <input type="password" name="password" value="" class="form-control" placeholder="Ex: Ink" aria-describedby="basic-addon1">
+            <div class="input-group-btn">
+                <input type="submit" value="Login" class="btn btn-success center-block">
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 </form>
-<a href="register.php">Register</a>
+
+</div>
+</div>
+<!-- End of the login form that appears in the browser -->
+
+<div class="alert alert-warning" role="alert">Only true squids may enter.</div>
+
+</body>
 </html>

@@ -15,8 +15,8 @@
 		.table-hover tbody tr:hover td {
 		    background: lightgray;
 		}
-	</style>
 
+	</style>
 	<body>
 
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -37,18 +37,6 @@
 		      <ul class="nav navbar-nav">
 		        <li class="active"><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
 		        <li><a href="register.php">Register</a></li>
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="#">Action</a></li>
-		            <li><a href="#">Another action</a></li>
-		            <li><a href="#">Something else here</a></li>
-		            <li role="separator" class="divider"></li>
-		            <li><a href="#">Separated link</a></li>
-		            <li role="separator" class="divider"></li>
-		            <li><a href="#">One more separated link</a></li>
-		          </ul>
-		        </li>
 		      </ul>
 		      <!-- This is the Search Form -->
 		      <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
@@ -89,7 +77,7 @@
 
 
 		<!--==========================-->
-		<!-- This is the first panel -->
+		<!-- This is the input panel -->
 		<!--==========================-->
 		<div class="panel panel-success">
 			<div class="panel-heading">
@@ -103,17 +91,30 @@
 	  			<div class="col-lg-12">
 		    	<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1">Title</span>
-				  <input type="text" name="country" class="form-control" placeholder="Ex: Rainbowland" aria-describedby="basic-addon1">
-				  <span class="input-group-addon" id="basic-addon1">What's Up?</span>
-				  <input type="text" name="animal" class="form-control" placeholder="Ex: Unicorn" aria-describedby="basic-addon1">
-				  <div class="input-group-btn">
+				  <input type="text" name="country" class="form-control" placeholder="Ex: #swimming" aria-describedby="basic-addon1">
+					<div class="input-group-btn">
 				  <input type="submit" name="submit" class="btn btn-success center-block">
 				  </div>
 				</div>
 				</div>
 			</div>
 		</div>
-	    </form>
+		</form>
+			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
+		   	<div class="grid">
+			    <div class="row">
+		  			<div class="col-lg-12">
+			    	<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">What's Up?</span>
+						<textarea type="text" name="animal" class="span6 form-control" rows="3" placeholder="Ex: I won silver at the national championships!" aria-describedby="basic-addon1"></textarea>
+					  <div class="input-group-btn">
+					  <input type="submit" name="submit" class="btn btn-success center-block">
+					  </div>
+					</div>
+					</div>
+				</div>
+			</div>
+		    </form>
 		</div>
 
 	<?php
@@ -128,9 +129,9 @@
 			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
 			//exit;
 
-        	// Remember that this die statement is absolutely critical.  Without it,
-        	// people can view your members-only content without logging in.
-        	die("Redirecting to login.php");
+      // Remember that this die statement is absolutely critical.  Without it,
+    	// people can view your members-only content without logging in.
+      die("Redirecting to login.php");
     	}
 
 		// To access $_SESSION['user'] values put in an array, show user his username
@@ -149,14 +150,14 @@
 		if (mysql_num_rows($result) > 0) {
     		// print them one after another
     		echo "<table class='table table-hover'>";
-    		echo "<th>Index</th><th>Country</th><th>Animal</th><th></th>";
+    		echo "<th>User</th><th>Title</th><th>Text</th><th></th>";
     		while($row = mysql_fetch_row($result)) {
-						$row2 = mysql_fetch_row($result2);
 						echo "<tr>";
-						echo "<td>".$row2[1]."</td>";
+						//$row[0] = array_values($_SESSION['user']);
+						echo "<td>".$row[3]."</td>";
         		echo "<td>" .$row[1]."</td>";
         		echo "<td>".$row[2]."</td>";
-						echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row2[1]." class='btn btn-danger'>Delete</a></td>";
+						echo "<td><a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a></td>";
         		echo "</tr>";
     		}
 		    echo "</table>";
@@ -170,11 +171,13 @@
 		// set variable values to HTML form inputs
 		$country = mysql_escape_string($_POST['country']);
     	$animal = mysql_escape_string($_POST['animal']);
+			$id = mysql_escape_string($_POST['id']);
 
 		// check to see if user has entered anything
 		if ($animal != "") {
+			$arr = array_values($_SESSION['user']);
 	 		// build SQL query
-			$query = "INSERT INTO symbols (country, animal) VALUES ('$country', '$animal')";
+			$query = "INSERT INTO symbols (user, country, animal) VALUES ('$arr[1]', '$country', '$animal')";
 			// run the query
      		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
 			// refresh the page to show new update
@@ -220,28 +223,38 @@
 		$connection = mysql_connect($host, $username, $password) or die ("Unable to connect!");
 		mysql_select_db($dbname) or die ("Unable to select database!");
 		$search = mysql_escape_string($_POST['search']);
-		$query = "SELECT id,country FROM symbols WHERE animal LIKE '%$search%'";
+		if ($search != "") {
+		$query = "SELECT * FROM symbols WHERE animal LIKE '%$search%'";
 		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
+		}
 		if (mysql_num_rows($result) > 0) {
     		// print them one after another
     		echo "<table class='table table-hover'>";
-    		echo "<th>Index</th><th>Country</th>";
+    		echo "<th>User</th><th>Text</th>";
     		while($row = mysql_fetch_row($result)) {
         		echo "<tr>";
-						echo "<td>".$row[0]."</td>";
+						echo "<td>".$row[3]."</td>";
 						echo "<td>" . $row[1]."</td>";
         		echo "</tr>";
     		}
 		    echo "</table>";
-		} else {
+		} else if (mysql_num_rows($result) == 0 && $search != "") {
+			echo "<table class='table table-hover'>";
+			echo "<tr>";
+			echo "<td>"."No results match your search!"."</td>";
+			echo "</tr>";
+			echo "</table>";
+		}
+		else {
 
     		// print status message
     		echo "<table class='table table-hover'>";
     		echo "<tr>";
-				echo "<td>"."No results match your search!"."</td>";
+				echo "<td>".""."</td>";
     		echo "</tr>";
     		echo "</table>";
 		}
+
 	?>
 
 	</div>
