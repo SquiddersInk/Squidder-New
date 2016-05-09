@@ -1,4 +1,13 @@
 <html>
+<style>
+    body {
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                background-image: url(background.jpg);
+
+    }
+</style>
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
 
@@ -11,11 +20,7 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-	<style>
-		.table-hover tbody tr:hover td {
-		    background: lightgray;
-		}
-	</style>
+	
 
 	<body>
 
@@ -286,7 +291,7 @@
     <br /><br />
     <input type="submit" value="Register" />
 </form>
-</div>
+</div> <!-- ends here -->
 
 
 
