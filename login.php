@@ -1,12 +1,15 @@
 <html>
 <style>
     body {
-                background-size: cover;
-                background-repeat: no-repeat;
 
-                background-image: url(background.jpg);
+ margin: 0;
+ background-image: url(background.jpg);
+ background-size: 1440px 800px;
+ background-repeat:no-repeat;
+ display: compact;
+ font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-    }
 </style>
 <body>
 <!-- Custom font from Google -->
