@@ -55,19 +55,6 @@
 		        <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
 		        <li><a href="register.php">Register</a></li>
 		      </ul>
-		      <!-- This is the Search Form -->
-		      <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-		        <div class="input-group">
-					<div class="input-group">
-					  <span class="input-group-addon" id="basic-addon1">Search posts</span>
-					  <input type="text" name="search" class="form-control" placeholder="Ex: Ink" aria-describedby="basic-addon1">
-					  <div class="input-group-btn">
-					  <input type="submit" name="submit" class="btn btn-success">
-					  </div>
-					</div>
-		    	</div>
-		      </form>
-
 
 
 		      <form class="navbar-form navbar-right" action="logout.php" method="post">
@@ -112,6 +99,7 @@
 					</div>
 					</div>
 				</div>
+				<br>
 			</div>
 		</form>
 
@@ -300,64 +288,12 @@
 
 	<!-- End of the first panel -->
 	<div class='row'>
-		<div class="col-md-9" padding='150px'>
+		<div class="col-md-8" padding='150px'>
 			<div class="alert alert-warning" role="alert">Only True Squids are capable of reading this holy scripture.</div>
 		</div>
 	</div>
 
-		<!--==================================-->
-		<!-- This is the search results panel -->
-		<!--==================================-->
-<div class='row'>
-	<div class="col-md-9">
-		<div class="panel panel-success">
-				<div class="panel-heading">
-					<h3 class="panel-title">Search Results</h3>
-				</div>
 
-			<!-- This is the Search function -->
-		<?php
-			require("common.php");
-			$connection = mysql_connect($host, $username, $password) or die ("Unable to connect!");
-			mysql_select_db($dbname) or die ("Unable to select database!");
-			$search = mysql_escape_string($_POST['search']);
-			if ($search != "") {
-			$query = "SELECT * FROM ".posts." WHERE content LIKE '%$search%'";
-			$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
-			}
-			if (mysql_num_rows($result) > 0) {
-	    		// print them one after another
-	    		echo "<table class='table table-hover'>";
-	    		echo "<th>User</th><th>Text</th>";
-	    		while($row = mysql_fetch_row($result)) {
-	        		echo "<tr>";
-							echo "<td>".$row[1]."</td>";
-							echo "<td>".$row[2]."</td>";
-	        		echo "</tr>";
-	    		}
-			    echo "</table>";
-			} else if (mysql_num_rows($result) == 0 && $search != "") {
-				echo "<table class='table table-hover'>2";
-				echo "<tr>";
-				echo "<td>"."No results match your search!"."</td>";
-				echo "</tr>";
-				echo "</table>";
-			}
-			else {
-
-	    		// print status message
-	    		echo "<table class='table table-hover'>";
-	    		echo "<tr>";
-					echo "<td>".""."</td>";
-	    		echo "</tr>";
-	    		echo "</table>";
-			}
-
-		?>
-
-		</div>
-	</div>
-</div>
 </div>
 
 
