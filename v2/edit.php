@@ -77,7 +77,7 @@
 <div class='container'>
 <div class='row'>
 	<div class="col-md-8" padding='150px'>
-		<br><br><br><br>
+		<br><br><br>
 
 		<!--==========================-->
 		<!-- This is the input panel -->
@@ -88,6 +88,7 @@
 	   	<div class="grid">
 		    <div class="row">
 	  			<div class="col-lg-12">
+	  				<h1 class="page-header" id="usrnm">Squidder</h1>
 		    	<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">Enter your message</span>
 					  <input type="text" name="content" class="form-control" placeholder="Don't forget to use hashtags!  #forgetful" aria-describedby="basic-addon1">
@@ -217,11 +218,12 @@
 	</div>
 
 		<div class="col-md-4">
-			<br><br><br><br>
+			<br><br><br>
 			
 			<!--==================================-->
 			<!-- This is the search panel -->
 			<!--==================================-->
+			<h1 class="page-header" id="usrnm">Search</h1>
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">Search Results</h3>
