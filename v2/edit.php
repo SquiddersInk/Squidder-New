@@ -51,6 +51,7 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 		      	<li><a href="about.php">About Us</a></li>
+		      	<li><a href="help.php">Help</a></li>
 		        <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
 		        <li><a href="register.php">Register</a></li>
 		      </ul>
@@ -109,52 +110,13 @@
 					  	<input type="submit" name="submit" class="btn btn-success center-block">
 					  	</div>
 					</div>
-					<br>
-					<div class="input-group">
-							<span class="input-group-addon" id="basic-addon1">What's Up?</span>
-							<textarea type="text" name="timestamp" class="span6 form-control" rows="3" placeholder="Ex: I won silver at the national championships!" aria-describedby="basic-addon1"></textarea>
-					</div>
 					</div>
 				</div>
 			</div>
 		</form>
 
-			<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-		   	<div class="grid">
-			    <div class="row">
-		  			<div class="col-lg-12">
-			    	<div class="input-group">
-						<span class="input-group-addon" id="basic-addon1">What's Up?</span>
-						<textarea type="text" name="timestamp" class="span6 form-control" rows="2" placeholder="Ex: I won silver at the national championships!" aria-describedby="basic-addon1"></textarea>
-					  <div class="input-group-btn">
-					  <input type="submit" name="submit" class="btn btn-lg btn-success center-block">
-					  </div>
-					</div>
-					</div>
-				</div>
-			</div>
-		    </form>
-
 
 	<?php
-		// determine current table
-		// if (isset($_POST['room'])) {
-		// 	$current = 'posts';
-		// } else if (isset($_POST['room2'])){ 
-		// 	$current = 'posts2';
-		// } else if (isset($_POST['room3'])){ 
-		// 	$current = 'posts3';
-		// } else if (isset($_POST['room4'])){ 
-		// 	$current = 'posts4';
-		// } else if(isset($_POST['room'])){
-		// 	$current = 'posts';
-		// }
-		
-		// if (isset($_POST['switchroom'])) { // startIF
-		// 	$selectedRoom = $_POST['room'];
-		// 	$current = $selectedRoom;
-		// }
-
 
 	    // pass in some info;
 		require("common.php");
@@ -194,21 +156,16 @@
 					echo "<div class = 'panel panel-success'>";
 					echo "<div class='panel-heading'> On ".$row[3].", you said: </div>";
 					echo "<div class='panel-body'>";
-					echo "<p>".$row[0]."</p>";
-					echo "<p>".$row[1]."</p>";
 					echo "<p>".$row[2]."</p>";
-					echo "<p>".$row[3]."</p>";
-					echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
+					
+					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				} else {
 					echo "<div class = 'panel panel-info'>";
 					echo "<div class='panel-heading'> On ".$row[3].", ".$row[1]." said: </div>";
 					echo "<div class='panel-body'>";
-					echo "<p>".$row[0]."</p>";
-					echo "<p>".$row[1]."</p>";
 					echo "<p>".$row[2]."</p>";
-					echo "<p>".$row[3]."</p>";
 
-					echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
+					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				}
 				echo "</div>";
 				echo "</div>";
@@ -270,33 +227,10 @@
 	?>
 
 	</div>
-		<!--==================================-->
-		<!-- This is the room switch panel    -->
-		<!--==================================-->
+
 		<div class="col-md-4">
 			<br><br><br><br>
-			<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Select Chatroom</h3>
-					</div>
-				<div class="panel panel-body">
-					<div class="input-group">
-						<form role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-							
-							<input type="checkbox" class="btn btn-sm btn-info navbar-btn" name='room' value='posts'>Room I<br>
-							
-							<input type="checkbox" class="btn btn-sm btn-info navbar-btn" name='room' value='posts2'>Room II<br>
-					
-							<input type="checkbox" class="btn btn-sm btn-info navbar-btn" name='room' value='posts3'>Room III<br>
-						
-							<input type="checkbox" class="btn btn-sm btn-info navbar-btn" name='room' value='posts4'> Room IV<br>
-
-							<button type="submit" class="btn btn-info" name='switchroom'>SWITCH</button>
-							
-						</form>
-					</div>
-				</div>
-			</div>
+			
 			<!--==================================-->
 			<!-- This is the search panel -->
 			<!--==================================-->
