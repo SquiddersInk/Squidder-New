@@ -22,6 +22,7 @@
 		}
 		p {
 			font-family: 'Alegreya SC', serif;
+			color:white;
 		}
 		.p2 {
 			margin-left: 15px;
@@ -29,6 +30,12 @@
 			margin-right: 15px;
 			font-size: 200%;
 			font-weight: bold;
+		}
+		.panel{
+	    background-color: rgba(245, 245, 245, 0.1);
+		}
+		.alert{
+	    background-color: rgba(245, 245, 245, 0.1);
 		}
 
 	</style>
@@ -146,18 +153,24 @@
 					echo "<div class='panel-heading'> On ".$row[3].", you said: </div>";
 					echo "<div class='panel-body'>";
 					echo "<p>".$row[2]."</p>";
+					echo "</div>";
+					echo "</div>";
+					//echo '<div class="alert"><p>'.'On '.$row[3].', you said:   '.$row[2].'</p></div>';
 					
 					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				} else {
 					echo "<div class = 'panel panel-info'>";
-					echo "<div class='panel-heading'> On ".$row[3].", ".$row[1]." said: </div>";
+					echo "<div class='panel-heading'> On ".$row[3].", <b>".$row[1]."</b> said: </div>";
 					echo "<div class='panel-body'>";
 					echo "<p>".$row[2]."</p>";
+					echo "</div>";
+					echo "</div>";
+					//echo '<div class="alert"><p>'.'On '.$row[3].', <b>'.$row[1].'</b> said:   '.$row[2].'</p></div>';
 
 					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				}
-				echo "</div>";
-				echo "</div>";
+				// echo "</div>";
+				// echo "</div>";
 
 			}
 
@@ -291,7 +304,7 @@
 	<!-- End of the first panel -->
 	<div class='row'>
 		<div class="col-md-8" padding='150px'>
-			<div class="alert alert-warning" role="alert">Only True Squids are capable of reading this holy scripture.</div>
+			<div class="alert" role="alert"><p>Only True Squids are capable of reading this holy scripture.</p></div>
 		</div>
 	</div>
 
