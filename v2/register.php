@@ -1,14 +1,18 @@
 <html>
 <style>
    body {
-
- margin: 0;
- background-image: url(squid.jpg);
- background-size: 1440px 800px;
- background-repeat:no-repeat;
- display: compact;
- font: 13px/18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+            background: url(bg.jpg);
+            background-repeat: no-repeats;
+            background-size: cover;
+        }
+        .p1 {
+            font-family: 'Alegreya SC', serif;
+            margin-left: 15px;
+            margin-top: 15px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            font-size: 125%;
+        }
 </style>
 <!-- Custom font from Google -->
 <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
@@ -50,10 +54,9 @@
               <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
                 <div class="input-group">
                     <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">Search posts</span>
-                      <input type="text" name="search" class="form-control" placeholder="Ex: Ink" aria-describedby="basic-addon1">
+                      
                       <div class="input-group-btn">
-                      <input type="submit" name="submit" class="btn btn-success">
+                 
                       </div>
                     </div>
                 </div>

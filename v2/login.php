@@ -101,7 +101,7 @@
                     <div class="container">
                     <div class="row">
                         <div class="col-md-8">
-                        <div class="alert alert-warning" role="alert">Only True Squids are capable of successfully logging in.</div>
+                        <div class="alert alert-warning" role="alert">Only True Squids may enter.</div>
                         </div>
                     </div>
                     </div>';

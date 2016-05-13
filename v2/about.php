@@ -57,9 +57,9 @@
                 <div class="input-group">
                     <div class="input-group">
                       
-                      <input type="text" name="search" class="form-control" placeholder="Ex: Ink" aria-describedby="basic-addon1">
+                      
                       <div class="input-group-btn">
-                      <input type="submit" name="submit" class="btn btn-success">
+                     
                       </div>
                     </div>
                 </div>
