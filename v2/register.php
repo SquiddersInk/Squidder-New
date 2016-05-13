@@ -295,19 +295,22 @@
         <!--==========================-->
         <!-- This is the second panel -->
         <!--==========================-->
+        <div class="col-md-5" padding='150px'>
         <div class="panel panel-success">
             <div class="panel-heading">
                 Please Register your username, email and password.
             </div>
         <div class="panel-body">
-            Once you have registered, login for the fun!
+            Once you have registered, login for the <a href="fun.html">fun</a>!
+            
+</div>
 </div>
 
 <!--===================================================-->
 <!-- This is the login form that appears in the browser -->
 <!--===================================================-->
-<div class="col-md-3" padding='150px'>
-<br><br><br><br>
+<div class="col-md-6" padding='150px'>
+<br><br><br>
 <div class="panel panel-success">
     <div class="panel-heading">
         <h3 class="panel-title">Register</h3>
@@ -332,7 +335,6 @@
     <br /><br />
     <input type="submit" value="Register" class="btn btn-success center-block">
             </div>
-           
         </div>
         </div>
     </div>
