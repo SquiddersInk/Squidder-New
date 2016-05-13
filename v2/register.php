@@ -208,6 +208,9 @@
             margin-bottom: 15px;
             font-size: 125%;
         }
+        .panel{
+	    background-color: rgba(245, 245, 245, 0.1);
+		}
 </style>
 <!-- Custom font from Google -->
 <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
