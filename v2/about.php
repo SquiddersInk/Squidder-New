@@ -117,7 +117,7 @@
                     </div>
                 </div>
             </div>
-						<h1 class="page-header" id="usrnm">Our Developers:</h1>
+						<h1 class="page-header" id="usrnm">Our Squad:</h1>
             <div class="row">
                 <div class="col-lg-8">
                     <div class="panel panel-default">
@@ -126,7 +126,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="p1">
-													Surin "Rao"ster Rao, our main github manager, always brings his enthusiastic attitude to our group. Apart from working on the github, he is also in charge of our login and register pages to ensure that our users experience a fluid sign-up process.
+													Surin "Raoster" Rao, our main github manager, always brings his enthusiastic attitude to our group. Apart from working on the github, he is also in charge of our login and register pages to ensure that our users experience a fluid sign-up process.
                         </div>
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="p1">
-													Geoffrey "Jianger" Jiang, has the roles of assistant coder, github manager, and morale-booster supremeo. He created the about page and the help page and he helps around with the other coding responsities.
+													Geoffrey "Jianger" Jiang, has the roles of assistant coder, github manager, and morale-booster supremeo. He created the about page and the help page and he helps around with the other coding responsibilities.
                         </div>
                     </div>
                 </div>
