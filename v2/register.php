@@ -297,8 +297,10 @@
         <!--==========================-->
         <div class="panel panel-success">
             <div class="panel-heading">
+                Please Register your username, email and password.
             </div>
         <div class="panel-body">
+            Once you have registered, login for the fun!
 </div>
 
 <!--===================================================-->
