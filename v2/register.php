@@ -1,111 +1,3 @@
-<html>
-<style>
-   body {
-            background: url(bg.jpg);
-            background-repeat: no-repeats;
-            background-size: cover;
-        }
-        .p1 {
-            font-family: 'Alegreya SC', serif;
-            margin-left: 15px;
-            margin-top: 15px;
-            margin-right: 15px;
-            margin-bottom: 15px;
-            font-size: 125%;
-        }
-</style>
-<!-- Custom font from Google -->
-<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-    
-
-    <body>
-
-         <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span>Squidder</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li><a href="about.php">About Us</a></li>
-                <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
-                 <li class="active"><a href="register.php">Register</a></li>
-              </ul>
-              <!-- This is the Search Form -->
-              <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-                <div class="input-group">
-                    <div class="input-group">
-                      
-                      <div class="input-group-btn">
-                 
-                      </div>
-                    </div>
-                </div>
-              </form>
-
-
-
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <?php
-                    require("common.php");
-                    $arr = array_values($_SESSION['user']);
-                    if ($arr[1]!=''){
-                        echo "<a href='#'>Welcome, " . $arr[1] . "</a></li><li>";
-                        echo '
-                              <form class="navbar-form anavbar-right" action="edit.php" method="post">
-                                <button class="btn btn-warning">Proceed</button>
-                              </form>
-                              </li>
-                              </ul>';
-                    } else {
-                        echo "<a href='login.php'>You are not signed in. </a></li><li>";
-                        echo '
-                              <form class="navbar-form anavbar-right" action="register.php" method="post">
-                                <button class="btn btn-warning">Register</button>
-                              </form>
-                              </li>
-                              </ul>';
-                    }
-                    ?>
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-
-
-
-
-
-        <!-- End of the HTML form that appears in the browser -->
-
-        <!--==========================-->
-        <!-- This is the second panel -->
-        <!--==========================-->
-        <div class="panel panel-success">
-            <div class="panel-heading">
-            </div>
-        <div class="panel-body">
-
-
 <?php
 
     // First we execute our common code to connection to the database and start the session
@@ -301,6 +193,114 @@
     
 </form> <!-- -->
 
+
+<style>
+   body {
+            background: url(bg.jpg);
+            background-repeat: no-repeats;
+            background-size: cover;
+        }
+        .p1 {
+            font-family: 'Alegreya SC', serif;
+            margin-left: 15px;
+            margin-top: 15px;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            font-size: 125%;
+        }
+</style>
+<!-- Custom font from Google -->
+<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    
+
+    <body>
+
+         <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span>Squidder</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="about.php">About Us</a></li>
+                <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
+                 <li class="active"><a href="register.php">Register</a></li>
+              </ul>
+              <!-- This is the Search Form -->
+              <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
+                <div class="input-group">
+                    <div class="input-group">
+                      
+                      <div class="input-group-btn">
+                 
+                      </div>
+                    </div>
+                </div>
+              </form>
+
+
+
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <?php
+                    require("common.php");
+                    $arr = array_values($_SESSION['user']);
+                    if ($arr[1]!=''){
+                        echo "<a href='#'>Welcome, " . $arr[1] . "</a></li><li>";
+                        echo '
+                              <form class="navbar-form anavbar-right" action="edit.php" method="post">
+                                <button class="btn btn-warning">Proceed</button>
+                              </form>
+                              </li>
+                              </ul>';
+                    } else {
+                        echo "<a href='login.php'>You are not signed in. </a></li><li>";
+                        echo '
+                              <form class="navbar-form anavbar-right" action="register.php" method="post">
+                                <button class="btn btn-warning">Register</button>
+                              </form>
+                              </li>
+                              </ul>';
+                    }
+                    ?>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+<br><br><br>
+
+
+
+
+        <!-- End of the HTML form that appears in the browser -->
+
+        <!--==========================-->
+        <!-- This is the second panel -->
+        <!--==========================-->
+        <div class="panel panel-success">
+            <div class="panel-heading">
+            </div>
+        <div class="panel-body">
+</div>
+
 <!--===================================================-->
 <!-- This is the login form that appears in the browser -->
 <!--===================================================-->
@@ -345,5 +345,7 @@
 
 
 
+
+
 </body>
-</html>
+
