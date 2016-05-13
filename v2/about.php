@@ -48,6 +48,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
+                  <li class="active"><a href="about.php">About Us</a></li>
                 <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
                 <li><a href="register.php">Register</a></li>
               </ul>
@@ -55,7 +56,7 @@
               <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
                 <div class="input-group">
                     <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">Search posts</span>
+                      
                       <input type="text" name="search" class="form-control" placeholder="Ex: Ink" aria-describedby="basic-addon1">
                       <div class="input-group-btn">
                       <input type="submit" name="submit" class="btn btn-success">
