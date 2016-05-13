@@ -142,6 +142,9 @@
     .h1 {
         font-family: 'Alegreya SC', serif;
         font-size: 1000%;    }
+	.panel{
+    background-color: rgba(245, 245, 245, 0.1);
+	}
 </style>
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
