@@ -51,9 +51,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
+                <li><a href="about.php">About Us</a></li>
+                <li class="active"><a href="help.php">Help</a></li>
                 <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
                 <li><a href="register.php">Register</a></li>
-                <li><a href="about.php">About</a></li>
+               
               </ul>
               <!-- This is the Search Form -->
 
