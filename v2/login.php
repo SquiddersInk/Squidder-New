@@ -163,6 +163,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li><a href="about.php">About Us</a></li>
+                <li><a href="help.php">Help</a></li>
                  <li class="active"><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
                 <li><a href="register.php">Register</a></li>
               </ul>
