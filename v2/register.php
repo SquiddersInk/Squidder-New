@@ -304,7 +304,7 @@
                 Please Register your username, email and password.
             </div>
         <div class="panel-body">
-            Once you have registered, login for the <a href="fun.html">fun</a>!
+            Once you have registered, login for the fun!
             
 </div>
 </div>

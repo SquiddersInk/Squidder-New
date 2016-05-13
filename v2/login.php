@@ -231,7 +231,7 @@
                 </div>
             </div>
         </form> 
-        <a href="about.php">Forever dissappointed that a group of squids is not called a 'squad'.</a>
+       Forever dissappointed that a group of squids is not called a <a href="fun.html">'squad'</a>.
     </div>
 </div>
 </div>
