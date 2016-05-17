@@ -10,11 +10,11 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-CREATE DATABASE squidderInk;
-USE squidderInk;
+CREATE DATABASE squidder;
+USE squidder;
 
 --
--- Database: `squidderInk`
+-- Database: `squidder`
 --
 
 -- --------------------------------------------------------
@@ -35,7 +35,21 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id` ,`user`, `content`, `date`) VALUES
-(1, 'wesdfinjk', 'Norway', DEFAULT);
+(1, 'Jean Smithe', 'I am NOT John Smith. Remember that.', 'Monday'),
+(2, 'Squidster', 'How many tickles does it take to tickle a squid? Tentacles.', 'Monday'),
+(3, 'CheeseCakeFactory', 'Wow, this website is pretty snazzy. ', 'Tuesday'),
+(4, 'Joe', 'I totally agree there CheeseCakeFactory. ', 'Thursday'),
+(5, 'Emily', 'and that’s a good one there Squidster', 'Thursday'),
+(6, 'Wang', 'Check out The Buzz guys, it’s almost as good as Squidder Ink!', 'Friday'),
+
+(7, 'Wang', 'If 666 is all evil, is 25.8069 the root of all evil?', 'Sunday'),
+(8, 'Donald Trump', 'Don’t make jokes like that. I’m the root of all evil!', 'Wednesday'),
+(9, 'Nerdork', 'There are only 10 types of people in the world. Those that understand binary and those that don’t.', 'Wednesday'),
+(10, 'Nerdork', 'Hint: 10 = 1*2^1 + 0*2^0', 'Wednesday'),
+(11, 'TheOnion', 'http://www.theonion.com/article/brita-unveils-new-throat-water-filters-52823
+', 'Wednesday'),
+(12, 'TheOnion', 'OAKLAND, CA—Representatives from Brita, the nation’s bestselling brand of household water filtration products, held a press event Wednesday to unveil a new line of filters designed to be installed directly inside users’ throats. “Our patented ThroatPURE in-body filtration system is the quickest, most convenient way to remove toxins and impurities from drinking water, wherever you are,” said Brita’s head of North American marketing, Kathy O’Doyle, explaining that each unit comes with a speculum-like esophageal dilation device to allow for easy installation and removal of cartridges, and noting that the new product takes just three minutes to purify a 10-ounce glass of water, which the consumer simply holds in their mouth during the filtration process. “The filter is good for up to 3,000 gallons or three months of use. But knowing when to replace it is easy; a bright red indicator light will be visible through your neck, letting you know it’s time for a new one.” O’Doyle confirmed that many users will at first notice some small chunks of charcoal on their tongues and in their teeth, but that this would cease following a few uses of the system.', 'Wednesday');
+
 
 -- --------------------------------------------------------
 
@@ -91,3 +105,9 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+
+
+
+
+
+
