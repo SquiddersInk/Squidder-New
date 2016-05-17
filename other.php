@@ -1,4 +1,5 @@
 <!-- in this page, it will display the profile of the person that you have selected from the main page-->
+<!-- __________________________OTHER PAGE, MAY 17TH 2016, SQUIDDER INK_______________________ -->
 <html>
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
