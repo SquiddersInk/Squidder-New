@@ -1,4 +1,5 @@
 <html>
+<!-- ---------------------------ABOUT PAGE, MAY 17th 2016, SQUIDDER INK-------------------------------------------- -->
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
 
