@@ -203,8 +203,6 @@
 			// refresh the page to show new update
 			echo "<meta http-equiv='refresh' content='0'>";
 
-		} else {
-				echo "no";
 		}
 
 		// if DELETE pressed, set an id, if id is set then delete it from DB
