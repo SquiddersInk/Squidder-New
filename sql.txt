@@ -26,7 +26,7 @@ USE squidder;
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `user` varchar(255) NOT NULL DEFAULT '',
-  `content` varchar(255) NOT NULL DEFAULT '',
+  `content` varchar(1225) NOT NULL DEFAULT '',
   `date` varchar(255) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
