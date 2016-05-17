@@ -210,6 +210,7 @@
         }
         .panel{
 	    background-color: rgba(245, 245, 245, 0.1);
+        }
 	}
 </style>
 <!-- Custom font from Google -->
@@ -296,56 +297,45 @@
 
         <!-- End of the HTML form that appears in the browser -->
 
-        <!--==========================-->
-        <!-- This is the second panel -->
-        <!--==========================-->
-        <div class="col-md-5" padding='150px'>
+<div class="container">
+        <div class="row">
+        <div class="col-md-6" >
         <div class="panel panel-success">
-            <div class="panel-heading">
-                Please Register your username, email and password.
-            </div>
+        <div class="panel-heading">
+            Please Register your username, email and password.
+        </div>
         <div class="panel-body">
             Once you have registered, login for the fun!
-            
-</div>
-</div>
+        </div>
+        </div>
+        </div>
+        </div>
 
-<!--===================================================-->
-<!-- This is the login form that appears in the browser -->
-<!--===================================================-->
-<div class="col-md-6" padding='150px'>
-<br><br><br>
-<div class="panel panel-success">
-    <div class="panel-heading">
-        <h3 class="panel-title">Register</h3>
-    </div>
-<div class="panel-body">
 
-<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
-<div class="grid">
-    <div class="row">
-        <div class="col-lg-12">
+    <div class="col-md-6" >
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Register</h3>
+        </div>
+    <div class="panel-body">       
+    <form action="register.php" method="post">
         <div class="input-group">
-          
-<form action="register.php" method="post">
-    Username:<br />
-    <input type="text" name="username" value="" />
-    <br /><br />
-    E-Mail:<br />
-    <input type="text" name="email" value="" />
-    <br /><br />
-    Password:<br />
-    <input type="password" name="password" value="" />
-    <br /><br />
-    <input type="submit" value="Register" class="btn btn-success center-block">
-            </div>
+        Username:<br />
+        <input type="text" name="username" value="" />
+        <br /><br />
+        E-Mail:<br />
+        <input type="text" name="email" value="" />
+        <br /><br />
+        Password:<br />
+        <input type="password" name="password" value="" />
+        <br /><br />
+        <input type="submit" value="Register" class="btn btn-success center-block">
         </div>
-        </div>
+    </form>
     </div>
-</div>
-</form>
+    </div>
+    </div>
 
-</div>
 </div>
 <!-- End of the login form that appears in the browser -->
 
