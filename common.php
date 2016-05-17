@@ -1,5 +1,5 @@
 <?php 
-
+/* __________________________COMMON PAGE, MAY 17TH 2016, SQUIDDER INK_______________________ */
     // These variables define the connection information for your MySQL database 
     $username = "root"; 
     $password = "root"; 
