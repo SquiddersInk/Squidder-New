@@ -213,6 +213,8 @@
         }
 	}
 </style>
+<!-- above is the how the background was added, the image -->
+<!-- BOOTSTRAP -->
 <!-- Custom font from Google -->
 <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
 
@@ -240,15 +242,15 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span>Squidder</a>
-            </div>
+            </div>  <!-- the icon for squitter, the ink drop -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav"> <!-- what is in the navbar, the different buttons which redirect your to a specific page -->
                 <li><a href="about.php">About Us</a></li>
                 <li><a href="help.php">Help</a></li>
                 <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
-                 <li class="active"><a href="register.php">Register</a></li>
+                 <li class="active"><a href="register.php">Register</a></li> <!--the active is how it darkens so you know what page you are on -->
               </ul>
               <!-- This is the Search Form -->
               <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
