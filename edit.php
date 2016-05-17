@@ -1,4 +1,4 @@
-
+<!---in this file, we have the code for the main page of the our website, here, we will be having a page that displays all the posts and has a search function that you use to find posts and users. -->
 <html>
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
@@ -67,18 +67,18 @@
 		        <li><a href="register.php">Register</a></li>
 		      </ul>
 
-
+					<!--here is the link to the -->
 		      <form class="navbar-form navbar-right" action="logout.php" method="post">
 		      	<button class="btn btn-warning">Sign out</button>
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
 		        	<?php
-		        	require("common.php");
+		        		require("common.php");
 		            $arr = array_values($_SESSION['user']);
-					echo "<a href='profile.php' class='p3'>" ."Your Profile". "</a>";
-					?>
-				</li>
+								echo "<a href='profile.php' class='p3'>" ."Your Profile". "</a>";
+							?>
+						</li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -115,7 +115,7 @@
 			</div>
 		</form>
 
-
+	<!--In this code, it gets the data from the database and the table with all the user posts is created. -->
 	<?php
 	    // pass in some info;
 		require("common.php");
@@ -186,6 +186,7 @@
 			return $data;
 		}
 		// check to see if user has entered anything
+		// here, when the user inputs a post, it inputs into the database which user had posted it
 		if ($content != "") {
 
 	 		// build SQL query
@@ -224,6 +225,7 @@
 			<!--==================================-->
 			<!-- This is the search panel -->
 			<!--==================================-->
+			<!--here is the search function, and this is where the search bar is displayed, but not where it runs-->
 			<h1 class="page-header" id="usrnm">Search</h1>
 				<div class="panel panel-default">
 					<div class="panel-heading">
@@ -245,6 +247,7 @@
 
 
 				<!-- This is the Search function -->
+			<!--here is where the search executes and based on what the user searchs, the code searchs the database for a match and displays the matches in a table-->
 			<?php
 				require("common.php");
 				$connection = mysql_connect($host, $username, $password) or die ("Unable to connect!");

@@ -210,6 +210,7 @@
         }
         .panel{
 	    background-color: rgba(245, 245, 245, 0.1);
+        }
 	}
 </style>
 <!—- above is the how the background was added, the image —->
@@ -298,18 +299,30 @@
 
         <!-- End of the HTML form that appears in the browser -->
 
+<<<<<<< HEAD
         <!— this the the top box with the description —>
         <div class="col-md-5" padding='150px'>
         <div class="panel panel-success">
             <div class="panel-heading">
                 Please Register your username, email and password.
             </div> <!—- inside the box —->
+=======
+<div class="container">
+        <div class="row">
+        <div class="col-md-6" >
+        <div class="panel panel-success">
+        <div class="panel-heading">
+            Please Register your username, email and password.
+        </div>
+>>>>>>> origin/master
         <div class="panel-body">
             Once you have registered, login for the fun!
-            
-</div>
-</div>
+        </div>
+        </div>
+        </div>
+        </div>
 
+<<<<<<< HEAD
 <!—- ________________________________________________________________________________ —>
 <div class="col-md-6" padding='150px'> <!—- this is the size of the box, with the padding adjusted and the 6 represents the size —>
 <br><br><br> <!—- these are breaks, so it creates space —>
@@ -338,15 +351,40 @@
     <br /><br />
     <input type="submit" value="Register" class="btn btn-success center-block"> <!—- the submit button —>
             </div>
+=======
+
+    <div class="col-md-6" >
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Register</h3>
+>>>>>>> origin/master
         </div>
+    <div class="panel-body">       
+    <form action="register.php" method="post">
+        <div class="input-group">
+        Username:<br />
+        <input type="text" name="username" value="" />
+        <br /><br />
+        E-Mail:<br />
+        <input type="text" name="email" value="" />
+        <br /><br />
+        Password:<br />
+        <input type="password" name="password" value="" />
+        <br /><br />
+        <input type="submit" value="Register" class="btn btn-success center-block">
         </div>
+    </form>
     </div>
-</div>
-</form>
+    </div>
+    </div>
 
 </div>
+<<<<<<< HEAD
 </div>
 <!-- End of the login -->
+=======
+<!-- End of the login form that appears in the browser -->
+>>>>>>> origin/master
 
 
 
