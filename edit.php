@@ -1,4 +1,5 @@
 <!---in this file, we have the code for the main page of the our website, here, we will be having a page that displays all the posts and has a search function that you use to find posts and users. -->
+<!-- ________________________________EDIT PAGE, MAY 17TH 2016, SQUIDDER INK________________________ -->
 <html>
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
