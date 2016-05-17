@@ -141,11 +141,13 @@
     }
     .h1 {
         font-family: 'Alegreya SC', serif;
-        font-size: 1000%;    }
+        font-size: 1000%;    
+    }
 	.panel{
     background-color: rgba(245, 245, 245, 0.1);
 	}
 </style>
+
         <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -167,20 +169,6 @@
                  <li class="active"><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
                 <li><a href="register.php">Register</a></li>
               </ul>
-              <!-- This is the Search Form -->
-              <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
-                <div class="input-group">
-                    <div class="input-group">
-                      
-                      
-                      <div class="input-group-btn">
-                     
-                      </div>
-                    </div>
-                </div>
-              </form>
-
-
 
               <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -209,20 +197,26 @@
           </div><!-- /.container-fluid -->
         </nav>
 
-
+<!-- container for the entire page, save the nav -->
 <div class='container'>
+
+<!-- row that contains main elements of page -->
 <div class='row'>
+
+<!-- the title of the page, leftmost element -->
 <div class="col-md-4">
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <h4 class='h4'>Hey, welcome to  </h4>
     <h1 class='h1'>Squidder!</h1>
 </div>
+
+<!-- the rightmost element, aka the login panel -->
 <div class="col-md-8" padding='150px'>
     <br><br><br><br>
 <div class = 'panel panel-success'>
-    <div class='panel-heading'>
-        <h4>Login</h4> 
-    </div>
+        <div class='panel-heading'>
+            <h4>Login</h4> 
+        </div>
     <div class='panel panel-body'>
         <form action="login.php" method="post"> 
             <div class="input-group">
@@ -239,5 +233,7 @@
     </div>
 </div>
 </div>
-</div>
-</div>
+<!-- elements of page are all above this -->
+
+</div> <!-- end row -->
+</div> <!-- close container -->
