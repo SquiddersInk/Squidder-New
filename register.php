@@ -212,7 +212,9 @@
 	    background-color: rgba(245, 245, 245, 0.1);
 	}
 </style>
+<!—- above is the how the background was added, the image —->
 <!-- Custom font from Google -->
+<!—- BOOTSTRAP —->
 <link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
 
 <!-- Latest compiled and minified CSS -->
@@ -230,7 +232,7 @@
 
          <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <!-- nabber is fixed to the top -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -239,15 +241,15 @@
                 <span class="icon-bar"></span>
               </button>
               <a class="navbar-brand" href="#"><span class="glyphicon glyphicon glyphicon-tint" aria-hidden="true"></span>Squidder</a>
-            </div>
+            </div> <!—- the icon for quitter, the drop —->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li><a href="about.php">About Us</a></li>
+                <li><a href="about.php">About Us</a></li> <! what is in the nabber, the dif buttons which redirect your to a specific page —->
                 <li><a href="help.php">Help</a></li>
                 <li><a href="login.php">Login <span class="sr-only">(current)</span></a></li>
-                 <li class="active"><a href="register.php">Register</a></li>
+                 <li class="active"><a href="register.php">Register</a></li> <!—-the active is how it darkens so you know what page you are on -—>
               </ul>
               <!-- This is the Search Form -->
               <form class="navbar-form navbar-left" role="search" action="<?=$_SERVER['PHP_SELF']?>" method="post">
@@ -272,7 +274,7 @@
                         echo "<a href='#'>Welcome, " . $arr[1] . "</a></li><li>";
                         echo '
                               <form class="navbar-form anavbar-right" action="edit.php" method="post">
-                                <button class="btn btn-warning">Proceed</button>
+                                <button class="btn btn-warning">Proceed</button> <!—- of you are logged in you can just proceed —>
                               </form>
                               </li>
                               </ul>';
@@ -280,7 +282,7 @@
                         echo "<a href='login.php'>You are not signed in. </a></li><li>";
                         echo '
                               <form class="navbar-form anavbar-right" action="register.php" method="post">
-                                <button class="btn btn-warning">Register</button>
+                                <button class="btn btn-warning">Register</button> <!—- if not have to register! —->
                               </form>
                               </li>
                               </ul>';
@@ -296,27 +298,23 @@
 
         <!-- End of the HTML form that appears in the browser -->
 
-        <!--==========================-->
-        <!-- This is the second panel -->
-        <!--==========================-->
+        <!— this the the top box with the description —>
         <div class="col-md-5" padding='150px'>
         <div class="panel panel-success">
             <div class="panel-heading">
                 Please Register your username, email and password.
-            </div>
+            </div> <!—- inside the box —->
         <div class="panel-body">
             Once you have registered, login for the fun!
             
 </div>
 </div>
 
-<!--===================================================-->
-<!-- This is the login form that appears in the browser -->
-<!--===================================================-->
-<div class="col-md-6" padding='150px'>
-<br><br><br>
+<!—- ________________________________________________________________________________ —>
+<div class="col-md-6" padding='150px'> <!—- this is the size of the box, with the padding adjusted and the 6 represents the size —>
+<br><br><br> <!—- these are breaks, so it creates space —>
 <div class="panel panel-success">
-    <div class="panel-heading">
+    <div class="panel-heading"> <!— the heading of the panel —>
         <h3 class="panel-title">Register</h3>
     </div>
 <div class="panel-body">
@@ -326,7 +324,8 @@
     <div class="row">
         <div class="col-lg-12">
         <div class="input-group">
-          
+
+<!—- this is where the box takes your information —->          
 <form action="register.php" method="post">
     Username:<br />
     <input type="text" name="username" value="" />
@@ -337,7 +336,7 @@
     Password:<br />
     <input type="password" name="password" value="" />
     <br /><br />
-    <input type="submit" value="Register" class="btn btn-success center-block">
+    <input type="submit" value="Register" class="btn btn-success center-block"> <!—- the submit button —>
             </div>
         </div>
         </div>
@@ -347,7 +346,7 @@
 
 </div>
 </div>
-<!-- End of the login form that appears in the browser -->
+<!-- End of the login -->
 
 
 
