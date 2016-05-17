@@ -76,24 +76,27 @@
 				<?php
 				require("common.php");
 				$arr = array_values($_SESSION['user']);
-				echo "<a href='profile.php'>".$arr[1]."'s Profile". "</a>";
+				echo "<a href='profile.php'>".$arr[1]."'s profile". "</a>";
 				?>
 			</li>
 		      </ul>
-		    </div><!-- /.navbar-collapse -->
-		  </div><!-- /.container-fluid -->
+		    </div>
+		  </div>
 		</nav>
+		<!-- End Nav Bar -->
+		
 
-
+<!-- contain the panels -->
 <div class='container'>
+<!-- Row for the input panel -->
 <div class='row'>
+	<!-- column for input panel -->
 	<div class="col-md-8" padding='150px'>
 		<br><br><br>
 
 		<!--==========================-->
 		<!-- This is the input panel -->
 		<!--==========================-->
-
 
 		<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 	   	<div class="grid">
@@ -145,22 +148,25 @@
 				$arr = array_values($_SESSION['user']);
 				if($arr[1]==$row[1]){
 					echo "<div class = 'panel panel-success'>";
+					// print the date
 					echo "<div class='panel-heading'> On ".$row[3].", you said: </div>";
 					echo "<div class='panel-body'>";
+					// print the message
 					echo "<p>".$row[2]."</p>";
 					echo "</div>";
 					echo "</div>";
-					//echo '<div class="alert"><p>'.'On '.$row[3].', you said:   '.$row[2].'</p></div>';
 
 					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				} else {
 					echo "<div class = 'panel panel-info'>";
+					// print the date
 					echo "<div class='panel-heading'> On ".$row[3].", <a href='other.php?name=$row[1]'>".$row[1]."</a> said: </div>";
 					echo "<div class='panel-body'>";
+					// print the message
 					echo "<p>".$row[2]."</p>";
 					echo "</div>";
 					echo "</div>";
-					//echo '<div class="alert"><p>'.'On '.$row[3].', <b>'.$row[1].'</b> said:   '.$row[2].'</p></div>';
+
 					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				}
 				// echo "</div>";
@@ -218,7 +224,7 @@
 	?>
 
 	</div>
-
+		<!-- beside input column, have search panel -->
 		<div class="col-md-4">
 			<br><br><br>
 
@@ -288,21 +294,18 @@
 				</div>
 			</div>
 		</div>
-	<!-- End of row -->
+	<!-- End of main top row -->
 
-
-	<!-- End of the first panel -->
+	<!-- ========= -->
+	<!-- Fun panel -->
 	<div class='row'>
 		<div class="col-md-8" padding='150px'>
 			<div class="alert" role="alert"><p>Only True Squids are capable of reading this holy scripture.</p></div>
 		</div>
 	</div>
-
+	<!-- ========= -->
 
 </div>
-
-
-
-
-	</body>
+<!-- close container -->
+</body>
 </html>
