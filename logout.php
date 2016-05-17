@@ -1,5 +1,5 @@
 <?php 
-
+/* __________________________LOGOUT PAGE, MAY 17TH 2016, SQUIDDER INK_______________________ */
     // Run this to connect the common code to our database. Starts the session
     require("common.php"); 
      
