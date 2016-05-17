@@ -1,3 +1,4 @@
+
 <html>
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
@@ -31,16 +32,19 @@
 			font-size: 200%;
 			font-weight: bold;
 		}
+		.p3 {
+			font-size: 125%;
+			text-transform: capitalize;;
+		}
 		.panel{
 	    background-color: rgba(245, 245, 245, 0.1);
 		}
 		.alert{
 	    background-color: rgba(245, 245, 245, 0.1);
 		}
-
 	</style>
 	<body>
-
+		<!--below is the code for the nav bar, which contains links to all of the website's features and a sign out, and a your profile section-->
 		<nav class="navbar navbar-default navbar-fixed-top">
 		  <div class="container-fluid">
 		    <!-- Brand and toggle get grouped for better mobile display -->
@@ -72,7 +76,7 @@
 		        	<?php
 		        	require("common.php");
 		            $arr = array_values($_SESSION['user']);
-					echo "<a href='#'>Welcome, " . $arr[1] . "</a>";
+					echo "<a href='profile.php' class='p3'>" ."Your Profile". "</a>";
 					?>
 				</li>
 		      </ul>
@@ -113,22 +117,17 @@
 
 
 	<?php
-
 	    // pass in some info;
 		require("common.php");
-
 		if(empty($_SESSION['user'])) {
-
 			// If they are not, we redirect them to the login page.
 			$location = "http://" . $_SERVER['HTTP_HOST'] . "/login.php";
 			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
 			//exit;
-
       // Remember that this die statement is absolutely critical.  Without it,
     	// people can view your members-only content without logging in.
       die("Redirecting to login.php");
     	}
-
 		// To access $_SESSION['user'] values put in an array, show user his username
 		// $arr = array_values($_SESSION['user']);
 		// open connection
@@ -142,12 +141,8 @@
 		// see if any rows were returned
 		if (mysql_num_rows($result) > 0) {
     		// print them one after another
-
-
     		while($row = mysql_fetch_row($result)) {
-
 				$arr = array_values($_SESSION['user']);
-
 				if($arr[1]==$row[1]){
 					echo "<div class = 'panel panel-success'>";
 					echo "<div class='panel-heading'> On ".$row[3].", you said: </div>";
@@ -156,37 +151,33 @@
 					echo "</div>";
 					echo "</div>";
 					//echo '<div class="alert"><p>'.'On '.$row[3].', you said:   '.$row[2].'</p></div>';
-					
+
 					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				} else {
 					echo "<div class = 'panel panel-info'>";
-					echo "<div class='panel-heading'> On ".$row[3].", <b>".$row[1]."</b> said: </div>";
+					echo "<div class='panel-heading'> On ".$row[3].", <a href='other.php?name=$row[1]'>".$row[1]."</a> said: </div>";
 					echo "<div class='panel-body'>";
 					echo "<p>".$row[2]."</p>";
 					echo "</div>";
 					echo "</div>";
 					//echo '<div class="alert"><p>'.'On '.$row[3].', <b>'.$row[1].'</b> said:   '.$row[2].'</p></div>';
-
 					//echo "<a href=".$_SERVER['PHP_SELF']."?id=".$row[0]." class='btn btn-danger'>Delete</a>";
 				}
 				// echo "</div>";
 				// echo "</div>";
-
 			}
-
-
 		} else {
-
     		// print status message
     		echo "No rows found!";
 		}
+
+
 		// free result set memory
 		mysql_free_result($result);
 		// set variable values to HTML form inputs
 		$content = test_input($_POST["content"]);
 		//$content = mysql_escape_string($_POST['content']);
 		$user = mysql_escape_string($_POST['user']);
-
 		// form validation function
 		function test_input($data) {
 			$data = trim($data);
@@ -194,17 +185,19 @@
 			$data = htmlspecialchars($data);
 			return $data;
 		}
-
 		// check to see if user has entered anything
 		if ($content != "") {
-			$arr = array_values($_SESSION['user']);
+
 	 		// build SQL query
 	 		$date = date(l);
 			$query = "INSERT INTO ".posts." (user, content, date) VALUES ('$arr[1]', '$content', "."'"."$date"."'".")";
 			// run the query
-     		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
+			$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
 			// refresh the page to show new update
-	 		echo "<meta http-equiv='refresh' content='0'>";
+			echo "<meta http-equiv='refresh' content='0'>";
+
+		} else {
+				echo "no";
 		}
 
 		// if DELETE pressed, set an id, if id is set then delete it from DB
@@ -214,25 +207,20 @@
     		$query = "DELETE FROM ".posts." WHERE id = ".$_GET['id'];
 			// run the query
      		$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
-
 			// reset the url to remove id $_GET variable
 			$location = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 			echo '<META HTTP-EQUIV="refresh" CONTENT="0;URL='.$location.'">';
 			exit;
-
 		}
-
 		// close connection
 		mysql_close($connection);
-
-
 	?>
 
 	</div>
 
 		<div class="col-md-4">
 			<br><br><br>
-			
+
 			<!--==================================-->
 			<!-- This is the search panel -->
 			<!--==================================-->
@@ -263,7 +251,7 @@
 				mysql_select_db($dbname) or die ("Unable to select database!");
 				$search = mysql_escape_string($_POST['search']);
 				if ($search != "") {
-				$query = "SELECT * FROM ".posts." WHERE content LIKE '%$search%'";
+				$query = "SELECT * FROM ".posts." WHERE content LIKE '%$search%' or user LIKE '%$search%'";
 				$result = mysql_query($query) or die ("Error in query: $query. ".mysql_error());
 				}
 				if (mysql_num_rows($result) > 0) {
@@ -285,7 +273,6 @@
 					echo "</table>";
 				}
 				else {
-
 		    		// print status message
 		    		echo "<table class='table table-hover'>";
 		    		echo "<tr>";
