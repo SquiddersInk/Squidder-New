@@ -67,18 +67,18 @@
 		        <li><a href="register.php">Register</a></li>
 		      </ul>
 
-					<!--here is the link to the -->
+			<!--here is the button to logout -->
 		      <form class="navbar-form navbar-right" action="logout.php" method="post">
 		      	<button class="btn btn-warning">Sign out</button>
 		      </form>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li>
-		        	<?php
-		        		require("common.php");
-		            $arr = array_values($_SESSION['user']);
-								echo "<a href='profile.php' class='p3'>" ."Your Profile". "</a>";
-							?>
-						</li>
+				<?php
+				require("common.php");
+				$arr = array_values($_SESSION['user']);
+				echo "<a href='profile.php'>".$arr[1]."'s Profile". "</a>";
+				?>
+			</li>
 		      </ul>
 		    </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -246,7 +246,7 @@
 					</form>
 
 
-				<!-- This is the Search function -->
+			<!-- This is the Search function -->
 			<!--here is where the search executes and based on what the user searchs, the code searchs the database for a match and displays the matches in a table-->
 			<?php
 				require("common.php");
@@ -279,7 +279,7 @@
 		    		// print status message
 		    		echo "<table class='table table-hover'>";
 		    		echo "<tr>";
-						echo "<td>".""."</td>";
+				echo "<td>".""."</td>";
 		    		echo "</tr>";
 		    		echo "</table>";
 				}
