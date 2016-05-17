@@ -327,7 +327,7 @@
 <div class="col-md-6" padding='150px'> <!-- this is the size of the box, with the padding adjusted and the 6 represents the size -->
 <br><br><br> <!-- these are breaks, so it creates space -->
 <div class="panel panel-success">
-    <div class="panel-heading"> <!— the heading of the panel —>
+    <div class="panel-heading"> <!-- the heading of the panel -->
         <h3 class="panel-title">Register</h3>
     </div>
 <div class="panel-body">
