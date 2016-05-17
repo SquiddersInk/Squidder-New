@@ -1,3 +1,4 @@
+<!-- ____________________________HELP PAGE, MAY 17TH 2016, SQUIDDER INK____________________ -->
 <html>
 	<!-- Custom font from Google -->
 	<link href='https://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
