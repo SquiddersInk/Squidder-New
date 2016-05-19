@@ -301,7 +301,7 @@
 
 <div class="container">
         <div class="row">
-        <div class="col-md-6" >
+        <div class="col-md-7” >
         <div class="panel panel-success">
         <div class="panel-heading">
             Please Register your username, email and password.
